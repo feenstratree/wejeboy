@@ -1,51 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wesjeboy & Sha</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      display: flex;
-      flex-direction: column; /* Stack items vertically */
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background-color: #f0f0f0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            font-family: sans-serif;
+        }
 
-    h1 {
-      text-align: center;
-      color: #333; /* Darker heading color */
-      margin-bottom: 20px;
-    }
+        h2 {  /* Stijl voor de nieuwe titel */
+            text-align: center;
+            color: #777; /* of een andere subtiele kleur */
+            margin-bottom: 5px; /* Beetje ruimte onder de titel */
+        }
 
-    .video-container {
-      width: 80%;
-      max-width: 800px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      border-radius: 8px;
-      overflow: hidden;
-    }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px; /* Optioneel: beetje ruimte tussen de titel en container */
+        }
 
-    video {
-      width: 100%;
-      display: block;
-    }
-  </style>
+        .video-container {
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px; /* Voeg wat ruimte tussen de titel en de video toe */
+        }
+
+        video {
+            width: 100%;
+            display: block;
+        }
+    </style>
 </head>
 <body>
+    <div class="video-container">
+        <h2>Er is nog veel meer, hou TikTok goed in de gaten!</h2>   <!-- Nieuwe tekst -->
+        <h1>Wesjeboy & Sha</h1>
+        <video controls>
+            <source src="videos/shatri.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
 
-  <h1>Wesjeboy & Sha</h1>  <!-- Added the heading here -->
+    <script>
+        const video = document.querySelector('video');
 
-  <div class="video-container">
-    <video controls>
-      <source src="videos/shatri.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-
+        if (video.readyState === 4) {
+            video.play();
+        }
+    </script>
 </body>
 </html>
